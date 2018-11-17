@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function ElectricLamp() {
+        this.getStatus = function () {
+            return this.status;
+        }
+        this.turnOff = function () {
+            this.status = false;
+            document.write("den dang tat" + "<br/>");
+        }
+        this.turnOn = function () {
+            this.status = true;
+            document.write("den dang bat" + "<br/>");
+        }
+    }
+
+    function SwitchButton() {
+        this.getInfo = function () {
+            return this.info;
+        }
+        // this.connectToLamp = function () {
+        //     return lamp.status;
+        //
+        // }
+        this.switchOff = function () {
+            document.write("cong tac tat" + "<br/>");
+            lamp.turnOff();
+            this.info = "Off";
+        }
+        this.switchOn = function () {
+            document.write("cong tac bat" + "<br/>");
+            lamp.turnOn();
+            this.info = "On";
+
+        }
+    }
+
+    let lamp = new ElectricLamp();
+    let switchBut = new SwitchButton();
+    for (let i = 0; i < 10; i++) {
+        document.write("thu lan thu " + (i+1) + "<br/>")
+        switchBut.switchOn();
+        switchBut.switchOff();
+    }
+</script>
+</body>
+</html>
